@@ -4,7 +4,7 @@ using System.IO;
 
 namespace CefApplicationTest
 {
-    public class ExtendedFileProtocolSchemeHandler :ResourceHandler
+    public class ExtendedFileProtocolSchemeHandler : ResourceHandler
     {
         #region private variables
 

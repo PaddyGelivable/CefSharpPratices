@@ -99,7 +99,6 @@ E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicat
 E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\MainWindow.g.cs
 E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\App.g.cs
 E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicationTest_MarkupCompile.cache
-E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicationTest_MarkupCompile.lref
 E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicationTest.exe
 E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicationTest.pdb
 E:\Web Practices\CefApplicationTest\CefApplicationTest\bin\x86\Debug\cef.pak

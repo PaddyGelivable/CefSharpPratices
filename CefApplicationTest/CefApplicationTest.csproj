@@ -90,6 +90,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="CefConfigHelper.cs" />
+    <Compile Include="CefCustomObject.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="DevEnvironmentHelper.cs" />
     <Compile Include="DirectoryInfoExtensions.cs" />

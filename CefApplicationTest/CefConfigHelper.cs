@@ -1,4 +1,5 @@
-﻿using CefSharp.Wpf;
+﻿using CefSharp;
+using CefSharp.Wpf;
 using System;
 using System.IO;
 
@@ -15,7 +16,7 @@ namespace CefApplicationTest
                 BrowserSubprocessPath = GetCefExecutablePath()
             };
 
-            settings.RegisterScheme(new CefSharp.CefCustomScheme
+            settings.RegisterScheme(new CefCustomScheme
             {
                 SchemeName = Constants.FileProtocolSchemeName,
                 SchemeHandlerFactory = new ExtendedFileProtocolSchemeHandlerFactory()
@@ -24,9 +25,14 @@ namespace CefApplicationTest
             return settings;
         }
 
+        public void SetCefSharpSettings()
+        {
+            CefSharpSettings.ShutdownOnExit = false;
+        }
+
         public static string GetStartupUrl(bool isDevMode)
         {
-            return isDevMode ? Constants.DebugStartupUrl : Constants.ReleaseStartupUrl;
+            return isDevMode ? Constants.DebugStartupUrl : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "index.html");
         }
 
         #endregion
