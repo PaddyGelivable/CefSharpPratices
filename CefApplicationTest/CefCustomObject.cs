@@ -1,5 +1,7 @@
 ﻿using CefSharp;
 using CefSharp.Wpf;
+using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace CefApplicationTest
@@ -21,6 +23,38 @@ namespace CefApplicationTest
         public void ShowDevTools()
         {
             instanceBrowser.ShowDevTools();
+        }
+
+        public void NewProject()
+        {
+            MessageBox.Show("New Project is called!");
+        }
+
+        public void OpenExistingProject()
+        {
+            MessageBox.Show("Open Existing Project is called!");
+        }
+
+        public void DiscoverProject()
+        {
+            MessageBox.Show("Discover Project is called!");
+        }
+
+        public void OpenProject(string projectName)
+        {
+            MessageBox.Show("Open " + projectName + " is called!");
+        }
+
+        public string GetSolutionList()
+        {
+            var projectList = new List<string>
+            {
+                "project1.ccwsln",
+                "project2.ccwsln",
+                "project3.ccwsln"
+            };
+
+            return JsonConvert.SerializeObject(projectList, Formatting.None);
         }
     }
 }

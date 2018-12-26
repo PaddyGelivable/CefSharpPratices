@@ -4,13 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" Initialized="Window_Initialized" Closed="Window_Closed">
+        Title="Cefsharp Container" Height="820" Width="1100" Initialized="Window_Initialized" Closed="Window_Closed">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition MinHeight="550" Height="Auto"/>
+            <RowDefinition MinHeight="740" Height="Auto"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="mainGrid"/>
-        <Button Grid.Row="1" Click="OpenDev_Click" Width="80" Margin="10, 0, 0, 0" HorizontalAlignment="Left" x:Name="openDev">Open Dev</Button>
+        <Grid Grid.Row="0" Grid.Column="0" x:Name="mainGrid"/>
+        <Grid Grid.Row="1" Grid.Column="0" x:Name="buttonContainer">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" Click="OpenDev_Click" Width="150" Margin="10, 0, 0, 0" HorizontalAlignment="Left" x:Name="openDev">Open Dev</Button>
+            <Button Grid.Row="0" Grid.Column="1" Click="EnableContent_Click" Width="150" Margin="10, 0, 0, 0" HorizontalAlignment="Left" x:Name="enableContainer">Enable/Disable Container</Button>
+            <Button Grid.Row="0" Grid.Column="2" Click="LocalizeContent_Click" Width="150" Margin="10, 0, 0, 0" HorizontalAlignment="Left" x:Name="localizeContainer">Localize content</Button>
+        </Grid>
     </Grid>
 </Window>

@@ -191,3 +191,7 @@ E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicat
 E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicationTest.Properties.Resources.resources
 E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicationTest.csproj.GenerateResource.cache
 E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicationTest.csproj.CoreCompileInputs.cache
+E:\Web Practices\CefApplicationTest\CefApplicationTest\bin\x86\Debug\Newtonsoft.Json.dll
+E:\Web Practices\CefApplicationTest\CefApplicationTest\bin\x86\Debug\Newtonsoft.Json.pdb
+E:\Web Practices\CefApplicationTest\CefApplicationTest\bin\x86\Debug\Newtonsoft.Json.xml
+E:\Web Practices\CefApplicationTest\CefApplicationTest\obj\x86\Debug\CefApplicationTest.csproj.CopyComplete

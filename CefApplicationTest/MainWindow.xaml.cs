@@ -19,6 +19,14 @@ namespace CefApplicationTest
             InitializeComponent();
 
             Dispatcher.ShutdownStarted += OnShutdownStarted;
+
+            CefSharpSettings.LegacyJavascriptBindingEnabled = true;
+
+            //Old method
+            //chromeBrowser.RegisterJsObject("cefCustomObject", new CefCustomObject(chromeBrowser, this));
+
+            //New method
+            chromeBrowser.JavascriptObjectRepository.Register("cefCustomObject", new CefCustomObject(chromeBrowser, this), true);
         }
 
         private void OnShutdownStarted(object sender, EventArgs e)
@@ -42,10 +50,13 @@ namespace CefApplicationTest
         {
             if(chromeBrowser.IsInitialized)
             {
+                //Case 1: Use the http
                 //chromeBrowser.Address = "www.baidu.com";
 
+                //Case 2: Load HTML file
                 //chromeBrowser.LoadHtml("<html><body><h1>Hello world!</h1></body></html>", "http://example/");
 
+                //Case 3: Use the Url
                 var startupUrl = CefConfigHelper.GetStartupUrl(DevEnvironmentHelper.IsDevMode());
 
                 chromeBrowser.Address = startupUrl;
@@ -60,6 +71,16 @@ namespace CefApplicationTest
         private void OpenDev_Click(object sender, RoutedEventArgs e)
         {
             chromeBrowser.ShowDevTools();
+        }
+
+        private void EnableContent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LocalizeContent_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void Window_Initialized(object sender, EventArgs e)
