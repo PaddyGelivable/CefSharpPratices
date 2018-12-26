@@ -12,7 +12,13 @@ namespace CefApplicationTest
     /// </summary>
     public partial class MainWindow : Window
     {
-        private ChromiumWebBrowser chromeBrowser = new ChromiumWebBrowser(); 
+        #region private variables
+
+        private ChromiumWebBrowser chromeBrowser = new ChromiumWebBrowser();
+
+        private bool enableContent = false;
+
+        #endregion
 
         public MainWindow()
         {
@@ -75,7 +81,8 @@ namespace CefApplicationTest
 
         private void EnableContent_Click(object sender, RoutedEventArgs e)
         {
-
+            enableContent = !enableContent;
+            ScriptedMethods.DispatchContentStatusChanged(chromeBrowser.GetFocusedFrame(), enableContent);
         }
 
         private void LocalizeContent_Click(object sender, RoutedEventArgs e)
