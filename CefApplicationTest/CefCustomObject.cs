@@ -2,6 +2,7 @@
 using CefSharp.Wpf;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows;
 
 namespace CefApplicationTest
@@ -27,24 +28,28 @@ namespace CefApplicationTest
 
         public void NewProject()
         {
-            MessageBox.Show("New Project is called!");
+            MessageBox.Show("New Project is called from WPF side!", "Cefsharp test project", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public void OpenExistingProject()
         {
-            MessageBox.Show("Open Existing Project is called!");
+            MessageBox.Show("Open Existing Project is called from WPF side!", "Cefsharp test project", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public void DiscoverProject()
         {
-            MessageBox.Show("Discover Project is called!");
+            MessageBox.Show("Discover Project is called from WPF side!", "Cefsharp test project", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         public void OpenProject(string projectName)
         {
-            MessageBox.Show("Open " + projectName + " is called!");
+            MessageBox.Show("Open " + projectName + " is called from WPF side!", "Cefsharp test project", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
+        /// <summary>
+        /// Get the current recent solution list
+        /// </summary>
+        /// <returns></returns>
         public string GetSolutionList()
         {
             var projectList = new List<string>
@@ -55,6 +60,15 @@ namespace CefApplicationTest
             };
 
             return JsonConvert.SerializeObject(projectList, Formatting.None);
+        }
+
+        /// <summary>
+        /// Set the startup language
+        /// </summary>
+        /// <returns></returns>
+        public string GetLanguage()
+        {
+            return JsonConvert.SerializeObject(Thread.CurrentThread.CurrentUICulture.Name, Formatting.None);
         }
     }
 }

@@ -1,0 +1,6 @@
+[1227/084943.535:INFO:CONSOLE(49089)] "Angular is running in the development mode. Call enableProdMode() to enable the production mode.", source: extendedfileprotocol://local-pc/vendor.js (49089)
+[1227/084959.883:INFO:CONSOLE(49089)] "Angular is running in the development mode. Call enableProdMode() to enable the production mode.", source: extendedfileprotocol://local-pc/vendor.js (49089)
+[1227/132818.663:INFO:CONSOLE(49089)] "Angular is running in the development mode. Call enableProdMode() to enable the production mode.", source: extendedfileprotocol://local-pc/vendor.js (49089)
+[1231/140230.637:INFO:CONSOLE(5)] "ERROR", source: ng:///AppModule/AppComponent_Host.ngfactory.js (5)
+[1231/140230.637:INFO:CONSOLE(5)] "ERROR CONTEXT", source: ng:///AppModule/AppComponent_Host.ngfactory.js (5)
+[1231/140230.637:INFO:CONSOLE(449)] "SyntaxError: Unexpected token o in JSON at position 1", source: extendedfileprotocol://local-pc/main.js (449)

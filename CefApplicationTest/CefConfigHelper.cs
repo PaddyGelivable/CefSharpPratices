@@ -33,7 +33,7 @@ namespace CefApplicationTest
         public static string GetStartupUrl(bool isDevMode)
         {
             return Constants.DebugStartupUrl;
-            //return isDevMode ? Constants.DebugStartupUrl : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "index.html");
+            //return isDevMode ? Constants.DebugStartupUrl : Constants.ReleaseStartupUrl;//Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "index.html");
         }
 
         #endregion

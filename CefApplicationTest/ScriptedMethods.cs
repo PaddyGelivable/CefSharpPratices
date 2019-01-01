@@ -1,10 +1,5 @@
 ﻿using CefSharp;
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CefApplicationTest
 {
@@ -21,6 +16,13 @@ namespace CefApplicationTest
                 CultureInfo.InvariantCulture, 
                 "var event = new CustomEvent('ContentStatusChanged', {{detail:{{contentStatus: {0} }} }}); document.dispatchEvent(event);", 
                 enable.ToString().ToLowerInvariant());
+            frame.ExecuteJavaScriptAsync(script);
+        }
+
+        public static void DispatchLanguageChanged(IFrame frame, string selectedLanguage)
+        {
+            var script = string.Concat(
+                "var event = new CustomEvent('LanguageChanged', {detail:", "\"", selectedLanguage, "\"", " }); document.dispatchEvent(event);");
             frame.ExecuteJavaScriptAsync(script);
         }
     }

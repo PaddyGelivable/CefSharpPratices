@@ -17,8 +17,8 @@
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Row="0" Grid.Column="0" Click="OpenDev_Click" Width="150" Margin="10, 0, 0, 0" HorizontalAlignment="Left" x:Name="openDev">Open Dev</Button>
-            <Button Grid.Row="0" Grid.Column="1" Click="EnableContent_Click" Width="150" Margin="10, 0, 0, 0" HorizontalAlignment="Left" x:Name="enableContainer">Enable/Disable Container</Button>
+            <Button Grid.Row="0" Grid.Column="0" Click="OpenDev_Click" Width="150" Margin="10, 0, 0, 0" HorizontalAlignment="Left" x:Name="openDev">Open Dev Tools</Button>
+            <Button Grid.Row="0" Grid.Column="1" Click="EnableContent_Click" Width="150" Margin="10, 0, 0, 0" HorizontalAlignment="Left" x:Name="enableContainer">Enable/Disable content</Button>
             <Button Grid.Row="0" Grid.Column="2" Click="LocalizeContent_Click" Width="150" Margin="10, 0, 0, 0" HorizontalAlignment="Left" x:Name="localizeContainer">Localize content</Button>
         </Grid>
     </Grid>

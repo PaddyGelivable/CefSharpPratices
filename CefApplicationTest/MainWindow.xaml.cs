@@ -14,9 +14,11 @@ namespace CefApplicationTest
     {
         #region private variables
 
-        private ChromiumWebBrowser chromeBrowser = new ChromiumWebBrowser();
+        private ChromiumWebBrowser chromeBrowser;
 
         private bool enableContent = false;
+
+        private string changedLanguage = "zh-CN";
 
         #endregion
 
@@ -32,7 +34,7 @@ namespace CefApplicationTest
             //chromeBrowser.RegisterJsObject("cefCustomObject", new CefCustomObject(chromeBrowser, this));
 
             //New method
-            chromeBrowser.JavascriptObjectRepository.Register("cefCustomObject", new CefCustomObject(chromeBrowser, this), true);
+            chromeBrowser.JavascriptObjectRepository.Register("cefCustomObject", new CefCustomObject(chromeBrowser, this), false);
         }
 
         private void OnShutdownStarted(object sender, EventArgs e)
@@ -42,6 +44,8 @@ namespace CefApplicationTest
 
         private void InitChromeBrowser()
         {
+            chromeBrowser = new ChromiumWebBrowser();
+
             var browserSettings = new BrowserSettings
             {
                 FileAccessFromFileUrls = CefState.Enabled,
@@ -71,7 +75,11 @@ namespace CefApplicationTest
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            Cef.Shutdown();
+            if(Cef.IsInitialized)
+            {
+                chromeBrowser.Dispose();
+                Cef.Shutdown();
+            }
         }
 
         private void OpenDev_Click(object sender, RoutedEventArgs e)
@@ -87,7 +95,7 @@ namespace CefApplicationTest
 
         private void LocalizeContent_Click(object sender, RoutedEventArgs e)
         {
-
+            ScriptedMethods.DispatchLanguageChanged(chromeBrowser.GetFocusedFrame(), changedLanguage);
         }
 
         private void Window_Initialized(object sender, EventArgs e)
